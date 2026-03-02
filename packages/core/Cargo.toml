@@ -20,7 +20,7 @@ anyhow.workspace = true
 thiserror.workspace = true
 semver.workspace = true
 colored = "3.1"
-regex = "1.10"
+regex = "1.12"
 wasm-bindgen = { version = "0.2", optional = true }
 
 [features]
@@ -36,7 +36,7 @@ crate-type = ["cdylib", "rlib"]
 wasm-opt = ["-O3", "-Os", "--enable-bulk-memory"]  # Optimize for size with bulk memory support
 
 [dev-dependencies]
-tempfile = "3.24"
+tempfile = "3.26"
 criterion = { version = "0.8", features = ["html_reports"] }
 borsh = { version = "1.6", features = ["derive"] }
 
