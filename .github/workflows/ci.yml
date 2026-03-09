@@ -144,21 +144,21 @@ jobs:
 
       - name: Upload CLI binary (Linux)
         if: matrix.os == 'ubuntu-latest'
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: lumos-cli-linux
           path: target/release/lumos
 
       - name: Upload CLI binary (macOS)
         if: matrix.os == 'macos-latest'
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: lumos-cli-macos
           path: target/release/lumos
 
       - name: Upload CLI binary (Windows)
         if: matrix.os == 'windows-latest'
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: lumos-cli-windows
           path: target/release/lumos.exe
