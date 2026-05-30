@@ -24,7 +24,8 @@
 | `getlumos/lumos-mode` | Emacs major mode + LSP | Emacs Lisp | v0.1.0 |
 | `getlumos/sublime-lumos` | Sublime Text package + LSP + snippets | YAML | v0.1.0 |
 | `getlumos/awesome-lumos` | 5 production examples (NFT, DeFi, DAO, Gaming, Vesting) | Anchor, TS | - |
-| `getlumos/docs-lumos` | Official docs & website (VitePress) | Vue, MD | - |
+| `getlumos/docs-lumos` | Official documentation (Astro Starlight, Vercel) | Astro, MDX | - |
+| `getlumos/lumos-website` | Marketing site for lumos-lang.org (Vite SPA, Vercel) | React, Vite, TS | v1.0.0 |
 | `getlumos/lumos-action` | GitHub Action for CI/CD validation & generation | Bash | v1.0.0 |
 | `@getlumos/cli` | npm package - WASM CLI for JS/TS devs (no Rust required) | WASM | v0.1.0 |
 
@@ -311,8 +312,8 @@ examples/[project-name]/
 
 **Purpose:** Official documentation website
 **Tech Stack:** Astro Starlight, MDX, TypeScript
-**Deployment:** VPS (Docker) → docs.lumos-lang.org
-**SSH Host:** `lumos` (port 4000)
+**Deployment:** Vercel — `docs.lumos-lang.org`
+**Vercel project:** `rectors-projects/docs-lumos`
 **Key Commands:**
 ```bash
 npm run dev          # Dev server (localhost:4321)
@@ -320,12 +321,29 @@ npm run build        # Build for production (includes OG image generation)
 npm run build:og     # Regenerate OG images only
 ```
 **Content Sections:** getting-started/, api/, guides/, frameworks/, editors/
-**Auto-deploy:** GitHub Actions → Docker → VPS
+**Auto-deploy:** Vercel git integration on push to `master`
 **CLAUDE.md:** [docs-lumos/CLAUDE.md](https://github.com/getlumos/docs-lumos/blob/main/CLAUDE.md)
 
 ---
 
-### 10. lumos-action
+### 10. lumos-website
+
+**Purpose:** Marketing and landing site
+**Tech Stack:** React 18, Vite, TypeScript, Tailwind CSS, shadcn/ui
+**Deployment:** Vercel — `lumos-lang.org` (apex) + `www.lumos-lang.org` (308 → apex)
+**Vercel project:** `rectors-projects/lumos-website`
+**Key Commands:**
+```bash
+npm run dev          # Dev server (localhost:8080)
+npm run build        # vite build (includes RSS generation)
+npm run lint         # ESLint check
+```
+**Auto-deploy:** Vercel git integration on push to `main`
+**CLAUDE.md:** [lumos-website/CLAUDE.md](https://github.com/getlumos/lumos-website/blob/main/CLAUDE.md)
+
+---
+
+### 11. lumos-action
 
 **Purpose:** GitHub Action for automated schema validation and code generation
 **Tech Stack:** Composite Action (Bash, GitHub Actions)
